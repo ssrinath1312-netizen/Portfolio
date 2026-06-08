@@ -20,35 +20,29 @@ body{font-family:'DM Sans',sans-serif;background:#fff;color:var(--navy);overflow
 ::-webkit-scrollbar-thumb{background:linear-gradient(var(--blue),var(--blue-mid));border-radius:2px;}
 
 /* SCROLL PROGRESS */
-#scroll-progress{position:fixed;top:60px;left:0;height:2px;background:linear-gradient(90deg,var(--blue),var(--blue-mid),#85B7EB);width:0%;z-index:200;transition:width 0.1s linear;}
+#scroll-progress{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--blue),var(--blue-mid),#85B7EB);width:0%;z-index:200;transition:width 0.1s linear;}
 
-/* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.93);backdrop-filter:blur(12px);border-bottom:1px solid rgba(24,95,165,0.12);padding:0 48px;display:flex;align-items:center;justify-content:space-between;height:60px;}
+/* NAV — fixed at bottom, full bar on all screens */
+nav{position:fixed;bottom:0;left:0;right:0;top:auto;z-index:100;background:rgba(255,255,255,0.95);backdrop-filter:blur(12px);border-top:1px solid rgba(24,95,165,0.12);border-bottom:none;padding:0 48px;display:flex;align-items:center;justify-content:space-between;height:60px;}
 .nav-logo{font-family:'DM Serif Display',serif;font-size:20px;background:linear-gradient(135deg,var(--blue),var(--blue-mid));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
 .nav-links{display:flex;gap:28px;list-style:none;align-items:center;}
 .nav-links a{font-size:12px;font-weight:500;color:var(--navy);text-decoration:none;transition:color 0.2s;letter-spacing:0.03em;position:relative;}
-.nav-links a::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:1.5px;background:linear-gradient(90deg,var(--blue),var(--blue-mid));transition:width 0.25s ease;}
+.nav-links a::after{content:'';position:absolute;top:-2px;bottom:auto;left:0;width:0;height:1.5px;background:linear-gradient(90deg,var(--blue),var(--blue-mid));transition:width 0.25s ease;}
 .nav-links a:hover::after,.nav-links a.active::after{width:100%;}
 .nav-links a:hover,.nav-links a.active{color:var(--blue);}
 .nav-cv{font-size:12px;font-weight:600;padding:7px 18px;border-radius:100px;background:linear-gradient(135deg,var(--blue),var(--blue-mid));color:white;text-decoration:none;transition:all 0.2s;box-shadow:0 2px 10px rgba(24,95,165,0.3);}
 .nav-cv:hover{box-shadow:0 4px 16px rgba(24,95,165,0.5);transform:translateY(-1px);}
-.hamburger{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:36px;height:36px;background:none;border:none;cursor:pointer;padding:4px;z-index:200;}
-.hamburger span{display:block;width:22px;height:2px;background:var(--navy);border-radius:2px;transition:all 0.3s ease;}
-.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
-.hamburger.open span:nth-child(2){opacity:0;}
-.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.mob-menu-btn{display:none;}
+.hamburger{display:none;}
 @media(max-width:768px){
-  .hamburger{display:none !important;}
-  .nav-cv{display:none;}
-  .nav-links{display:none;position:fixed;top:60px;left:0;right:0;background:rgba(255,255,255,0.97);backdrop-filter:blur(16px);flex-direction:column;padding:16px 0;border-bottom:1px solid rgba(24,95,165,0.12);z-index:99;gap:0;}
-  .nav-links.open{display:flex;}
-  .nav-links li a{display:block;padding:12px 28px;font-size:14px;font-weight:500;color:var(--navy);text-decoration:none;border-bottom:1px solid #F3F4F6;}
-  .nav-links li:last-child a{border-bottom:none;}
-  .nav-links li a:hover{background:var(--blue-light);color:var(--blue);}
+  nav{padding:0 16px;height:56px;}
+  .nav-logo{font-size:17px;}
+  .nav-cv{font-size:11px;padding:6px 13px;white-space:nowrap;}
+  .nav-links{display:none;}
 }
 
 /* HERO */
-.hero{min-height:100vh;background:linear-gradient(135deg,#020916 0%,#042C53 45%,#0a1628 100%);background-size:400% 400%;animation:heroGrad 14s ease infinite;display:flex;flex-direction:column;justify-content:center;padding:120px 80px 100px;position:relative;overflow:hidden;}
+.hero{min-height:100vh;background:linear-gradient(135deg,#020916 0%,#042C53 45%,#0a1628 100%);background-size:400% 400%;animation:heroGrad 14s ease infinite;display:flex;flex-direction:column;justify-content:center;padding:60px 80px 120px;position:relative;overflow:hidden;}
 @keyframes heroGrad{0%{background-position:0% 50%;}50%{background-position:100% 50%;}100%{background-position:0% 50%;}}
 .hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(24,95,165,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(24,95,165,0.06) 1px,transparent 1px);background-size:72px 72px;}
 .hero-glow{position:absolute;border-radius:50%;pointer-events:none;}
@@ -383,26 +377,9 @@ footer{background:linear-gradient(135deg,#010A14,#020E1C);padding:22px 80px;disp
 footer .fl{font-family:'DM Serif Display',serif;font-size:18px;color:rgba(255,255,255,0.22);}
 footer .fr{font-size:12px;color:rgba(255,255,255,0.18);}
 
-/* BOTTOM NAV */
-.bottom-nav{display:none;}
-@media(max-width:768px){
-  .bottom-nav{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:200;background:rgba(255,255,255,0.97);backdrop-filter:blur(16px);border-top:1px solid rgba(24,95,165,0.12);padding:8px 0 20px;justify-content:space-around;align-items:center;}
-  .bn-item{display:flex;flex-direction:column;align-items:center;gap:3px;text-decoration:none;padding:6px 14px;border-radius:12px;transition:all 0.2s;}
-  .bn-item i{font-size:22px;color:#9CA3AF;transition:color 0.2s;}
-  .bn-item span{font-size:10px;font-weight:500;color:#9CA3AF;transition:color 0.2s;}
-  .bn-item.active i{color:var(--blue);}
-  .bn-item.active span{color:var(--blue);}
-  .bn-item.active{background:var(--blue-light);}
-  body{padding-bottom:80px;}
-  .rtm-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:12px;}
-  .rtm{min-width:520px;font-size:11px;}
-  .rtm th,.rtm td{padding:8px 10px;}
-  .contact-info{align-items:flex-start;padding:0 8px;}
-  .contact-row{font-size:13px;gap:8px;flex-wrap:nowrap;}
-  .contact-row a{word-break:break-all;font-size:13px;}
-  .contact-links{flex-direction:column;align-items:center;}
-  .clink{width:100%;max-width:280px;justify-content:center;}
-}
+/* body padding for bottom nav */
+body{padding-bottom:60px;}
+@media(max-width:768px){body{padding-bottom:56px;}}
 
 /* REVEAL ANIMATIONS */
 .reveal{opacity:0;transform:translateY(24px);transition:opacity 0.65s ease,transform 0.65s ease;}
@@ -414,12 +391,10 @@ footer .fr{font-size:12px;color:rgba(255,255,255,0.18);}
 .reveal-delay-1{transition-delay:0.1s;}.reveal-delay-2{transition-delay:0.2s;}.reveal-delay-3{transition-delay:0.3s;}
 
 @media(max-width:768px){
-  /* NAV */
-  nav{padding:0 20px;}
-  .nav-links{display:none;}
+  /* NAV already handled above */
 
   /* HERO */
-  .hero{padding:90px 20px 70px;}
+  .hero{padding:40px 20px 80px;}
   .hero-name{font-size:clamp(38px,11vw,58px);letter-spacing:-1px;}
   .hero h1{font-size:clamp(22px,6vw,34px);}
   .hero-sub{font-size:14px;}
@@ -831,8 +806,9 @@ body:has(a:hover) #cursor-dot { background: #378ADD; transform: translate(-50%,-
     <span></span><span></span><span></span>
   </button>
 </nav>
-
-<!-- HERO -->
+<button class="mob-menu-btn" id="mobMenuBtn" onclick="toggleMenu()" aria-label="Menu">
+  <i class="ti ti-menu-2"></i>
+</button>
 <section class="hero" id="home">
   <div class="hero-grid"></div>
   <div class="hero-glow g1"></div>
@@ -1617,28 +1593,6 @@ body:has(a:hover) #cursor-dot { background: #378ADD; transform: translate(-50%,-
   </div>
 </section>
 
-<nav class="bottom-nav" id="bottomNav">
-  <a href="#about" class="bn-item active" onclick="setActive(this)">
-    <i class="ti ti-user"></i>
-    <span>About</span>
-  </a>
-  <a href="#experience" class="bn-item" onclick="setActive(this)">
-    <i class="ti ti-briefcase"></i>
-    <span>Work</span>
-  </a>
-  <a href="#projects" class="bn-item" onclick="setActive(this)">
-    <i class="ti ti-layout-grid"></i>
-    <span>Projects</span>
-  </a>
-  <a href="#skills" class="bn-item" onclick="setActive(this)">
-    <i class="ti ti-tool"></i>
-    <span>Skills</span>
-  </a>
-  <a href="#contact" class="bn-item" onclick="setActive(this)">
-    <i class="ti ti-mail"></i>
-    <span>Contact</span>
-  </a>
-</nav>
 
 <footer>
   <div class="fl">Srinath S.</div>
@@ -1918,22 +1872,16 @@ buildPhases();
   document.querySelectorAll('.domain-tags').forEach(el=>dtOb.observe(el));
 })();
 
-// BOTTOM NAV ACTIVE STATE
-function setActive(el){
-  document.querySelectorAll('.bn-item').forEach(i=>i.classList.remove('active'));
-  el.classList.add('active');
-}
-
-// Auto-highlight bottom nav on scroll
+// NAV ACTIVE STATE on scroll
 window.addEventListener('scroll',()=>{
-  const sections=[{id:'about',el:'about'},{id:'experience',el:'experience'},{id:'projects',el:'projects'},{id:'skills',el:'skills'},{id:'contact',el:'contact'}];
+  const sections=[{id:'about'},{id:'experience'},{id:'projects'},{id:'skills'},{id:'contact'}];
   const scrollY=window.scrollY+100;
   sections.forEach(s=>{
-    const sec=document.getElementById(s.el);
+    const sec=document.getElementById(s.id);
     if(!sec)return;
     if(scrollY>=sec.offsetTop && scrollY<sec.offsetTop+sec.offsetHeight){
-      document.querySelectorAll('.bn-item').forEach(i=>i.classList.remove('active'));
-      const link=document.querySelector(`.bn-item[href="#${s.id}"]`);
+      document.querySelectorAll('.nav-links a').forEach(a=>a.classList.remove('active'));
+      const link=document.querySelector(`.nav-links a[href="#${s.id}"]`);
       if(link)link.classList.add('active');
     }
   });
@@ -1942,13 +1890,22 @@ window.addEventListener('scroll',()=>{
 
 function toggleMenu(){
   const nav = document.getElementById('navLinks');
-  const btn = document.getElementById('hamburger');
+  const btn = document.getElementById('mobMenuBtn');
   nav.classList.toggle('open');
-  btn.classList.toggle('open');
+  if(btn){
+    btn.classList.toggle('open');
+    const icon = btn.querySelector('i');
+    if(icon) icon.className = nav.classList.contains('open') ? 'ti ti-x' : 'ti ti-menu-2';
+  }
 }
 function closeMenu(){
   document.getElementById('navLinks').classList.remove('open');
-  document.getElementById('hamburger').classList.remove('open');
+  const btn = document.getElementById('mobMenuBtn');
+  if(btn){
+    btn.classList.remove('open');
+    const icon = btn.querySelector('i');
+    if(icon) icon.className = 'ti ti-menu-2';
+  }
 }
 
 </script>
