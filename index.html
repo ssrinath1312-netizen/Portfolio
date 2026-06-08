@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -328,7 +329,7 @@ footer .fr{font-size:12px;color:rgba(255,255,255,0.18);}
 .proj-card.feat-ops::before { background: linear-gradient(90deg, #1F4E79, #2980B9, #5DADE2); }
 
 /* ══ SKILLS AS PILL TAGS ══ */
-.skills-grid { grid-template-columns: repeat(3,1fr); gap: 18px; margin-top: 48px; }
+.skills-grid { grid-template-columns: repeat(2,1fr); gap: 18px; margin-top: 48px; }
 .skill-card {
   border-radius: 16px; padding: 24px;
   background: white;
@@ -347,6 +348,12 @@ footer .fr{font-size:12px;color:rgba(255,255,255,0.18);}
 .skill-pill:hover { background: var(--blue); color: white; border-color: var(--blue); transform: scale(1.05); }
 @keyframes pillIn { from { opacity:0; transform: scale(0.82); } to { opacity:1; transform: scale(1); } }
 .skill-card h4 { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 12px; color: var(--blue-dark); }
+.skill-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; }
+.skill-list li { font-size: 13px; color: #374151; padding: 7px 0 7px 0; border-bottom: 1px solid #F3F4F6; line-height: 1.55; display: flex; align-items: center; gap: 10px; }
+.skill-list li:last-child { border-bottom: none; }
+.skill-list li::before { content: ''; display: inline-block; min-width: 7px; height: 7px; border-radius: 50%; background: #C9E0F5; flex-shrink: 0; }
+.skill-list-highlight { font-weight: 600; color: var(--blue) !important; }
+.skill-list-highlight::before { background: var(--blue) !important; }
 .skill-card .sk-icon { margin-bottom: 12px; background: #E6F1FB; }
 .skill-card .sk-icon i { color: var(--blue); }
 .sk-ba h4, .sk-tools h4, .sk-ai h4, .sk-method h4, .sk-domain h4, .sk-tech h4 { color: var(--blue-dark); }
@@ -717,46 +724,46 @@ body:has(a:hover) #cursor-dot { background: #378ADD; transform: translate(-50%,-
     <div class="about-right reveal-right">
       <div class="about-card" style="padding:0;overflow:hidden;">
         <div style="padding:16px 22px 12px;border-bottom:1px solid #F0F4FF;">
-          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--blue);margin-bottom:2px;">BA Lifecycle</div>
-          <div style="font-size:11px;color:var(--gray);">How I contribute at every SDLC phase</div>
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--blue);margin-bottom:2px;">From Problem to Solution</div>
+          <div style="font-size:11px;color:var(--gray);">How I navigate every SDLC phase end-to-end</div>
         </div>
         <div style="padding:14px 20px 16px;">
           <div style="display:flex;flex-direction:column;position:relative;">
             <div style="position:absolute;left:13px;top:18px;bottom:18px;width:2px;background:linear-gradient(180deg,#185FA5 0%,#1D9E75 50%,#059669 100%);opacity:0.18;border-radius:2px;"></div>
 
             <div class="lc-step" style="display:flex;align-items:flex-start;gap:12px;padding:7px 0;">
-              <div style="width:28px;height:28px;border-radius:50%;background:var(--blue);display:flex;align-items:center;justify-content:center;flex-shrink:0;z-index:1;box-shadow:0 0 0 3px white,0 0 0 5px #C9E0F5;"><i class="ti ti-target" style="color:white;font-size:12px;"></i></div>
-              <div><div style="font-size:11px;font-weight:700;color:var(--navy);">Planning</div><div style="font-size:10px;color:var(--gray);line-height:1.5;">Scope, feasibility, stakeholder identification</div></div>
+              <div style="width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,#185FA5,#378ADD);display:flex;align-items:center;justify-content:center;flex-shrink:0;z-index:1;box-shadow:0 2px 8px rgba(24,95,165,0.3);"><i class="ti ti-map-2" style="color:white;font-size:13px;"></i></div>
+              <div style="padding-top:2px;"><div style="font-size:11px;font-weight:700;color:var(--navy);">Planning</div><div style="font-size:10px;color:var(--gray);line-height:1.5;">Scope, feasibility, stakeholder identification</div></div>
             </div>
 
             <div class="lc-step" style="display:flex;align-items:flex-start;gap:12px;padding:7px 0;">
-              <div style="width:28px;height:28px;border-radius:50%;background:var(--blue);display:flex;align-items:center;justify-content:center;flex-shrink:0;z-index:1;box-shadow:0 0 0 3px white,0 0 0 5px #C9E0F5;"><i class="ti ti-file-description" style="color:white;font-size:12px;"></i></div>
-              <div><div style="font-size:11px;font-weight:700;color:var(--navy);">Requirements &amp; Analysis</div><div style="font-size:10px;color:var(--gray);line-height:1.5;">Elicitation, gap analysis, BRD / FRD / SRS, user stories</div></div>
+              <div style="width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,#185FA5,#378ADD);display:flex;align-items:center;justify-content:center;flex-shrink:0;z-index:1;box-shadow:0 2px 8px rgba(24,95,165,0.3);"><i class="ti ti-search" style="color:white;font-size:13px;"></i></div>
+              <div style="padding-top:2px;"><div style="font-size:11px;font-weight:700;color:var(--navy);">Requirements &amp; Analysis</div><div style="font-size:10px;color:var(--gray);line-height:1.5;">Elicitation, gap analysis, BRD / FRD / SRS, user stories</div></div>
             </div>
 
             <div class="lc-step" style="display:flex;align-items:flex-start;gap:12px;padding:7px 0;">
-              <div style="width:28px;height:28px;border-radius:50%;background:#3B6FBF;display:flex;align-items:center;justify-content:center;flex-shrink:0;z-index:1;box-shadow:0 0 0 3px white,0 0 0 5px #C9E0F5;"><i class="ti ti-layout-dashboard" style="color:white;font-size:12px;"></i></div>
-              <div><div style="font-size:11px;font-weight:700;color:var(--navy);">Design</div><div style="font-size:10px;color:var(--gray);line-height:1.5;">Wireframes, process flows, data flows, RBAC matrix</div></div>
+              <div style="width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,#534AB7,#7F77DD);display:flex;align-items:center;justify-content:center;flex-shrink:0;z-index:1;box-shadow:0 2px 8px rgba(83,74,183,0.3);"><i class="ti ti-vector-bezier-2" style="color:white;font-size:13px;"></i></div>
+              <div style="padding-top:2px;"><div style="font-size:11px;font-weight:700;color:var(--navy);">Design</div><div style="font-size:10px;color:var(--gray);line-height:1.5;">Wireframes, process flows, data flows, RBAC matrix</div></div>
             </div>
 
             <div class="lc-step" style="display:flex;align-items:flex-start;gap:12px;padding:7px 0;">
-              <div style="width:28px;height:28px;border-radius:50%;background:#2A8F75;display:flex;align-items:center;justify-content:center;flex-shrink:0;z-index:1;box-shadow:0 0 0 3px white,0 0 0 5px #A7F3D0;"><i class="ti ti-terminal-2" style="color:white;font-size:12px;"></i></div>
-              <div><div style="font-size:11px;font-weight:700;color:var(--navy);">Development</div><div style="font-size:10px;color:var(--gray);line-height:1.5;">Story walkthroughs, clarifications, sprint ceremonies</div></div>
+              <div style="width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,#0F6E56,#1D9E75);display:flex;align-items:center;justify-content:center;flex-shrink:0;z-index:1;box-shadow:0 2px 8px rgba(15,110,86,0.3);"><i class="ti ti-code" style="color:white;font-size:13px;"></i></div>
+              <div style="padding-top:2px;"><div style="font-size:11px;font-weight:700;color:var(--navy);">Development</div><div style="font-size:10px;color:var(--gray);line-height:1.5;">Story walkthroughs, clarifications, sprint ceremonies</div></div>
             </div>
 
             <div class="lc-step" style="display:flex;align-items:flex-start;gap:12px;padding:7px 0;">
-              <div style="width:28px;height:28px;border-radius:50%;background:#1D9E75;display:flex;align-items:center;justify-content:center;flex-shrink:0;z-index:1;box-shadow:0 0 0 3px white,0 0 0 5px #A7F3D0;"><i class="ti ti-checklist" style="color:white;font-size:12px;"></i></div>
-              <div><div style="font-size:11px;font-weight:700;color:var(--navy);">Testing</div><div style="font-size:10px;color:var(--gray);line-height:1.5;">Test scenario prep, TC validation, UAT coordination</div></div>
+              <div style="width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,#D97706,#F59E0B);display:flex;align-items:center;justify-content:center;flex-shrink:0;z-index:1;box-shadow:0 2px 8px rgba(217,119,6,0.3);"><i class="ti ti-clipboard-check" style="color:white;font-size:13px;"></i></div>
+              <div style="padding-top:2px;"><div style="font-size:11px;font-weight:700;color:var(--navy);">Testing</div><div style="font-size:10px;color:var(--gray);line-height:1.5;">Test scenario prep, TC validation, UAT coordination</div></div>
             </div>
 
             <div class="lc-step" style="display:flex;align-items:flex-start;gap:12px;padding:7px 0;">
-              <div style="width:28px;height:28px;border-radius:50%;background:#059669;display:flex;align-items:center;justify-content:center;flex-shrink:0;z-index:1;box-shadow:0 0 0 3px white,0 0 0 5px #A7F3D0;"><i class="ti ti-rocket" style="color:white;font-size:12px;"></i></div>
-              <div><div style="font-size:11px;font-weight:700;color:var(--navy);">Deployment</div><div style="font-size:10px;color:var(--gray);line-height:1.5;">Sprint demo, go-live support, sign-off documentation</div></div>
+              <div style="width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,#059669,#10B981);display:flex;align-items:center;justify-content:center;flex-shrink:0;z-index:1;box-shadow:0 2px 8px rgba(5,150,105,0.3);"><i class="ti ti-rocket" style="color:white;font-size:13px;"></i></div>
+              <div style="padding-top:2px;"><div style="font-size:11px;font-weight:700;color:var(--navy);">Deployment</div><div style="font-size:10px;color:var(--gray);line-height:1.5;">Sprint demo, go-live support, sign-off documentation</div></div>
             </div>
 
             <div class="lc-step" style="display:flex;align-items:flex-start;gap:12px;padding:7px 0;">
-              <div style="width:28px;height:28px;border-radius:50%;background:#047857;display:flex;align-items:center;justify-content:center;flex-shrink:0;z-index:1;box-shadow:0 0 0 3px white,0 0 0 5px #A7F3D0;"><i class="ti ti-refresh" style="color:white;font-size:12px;"></i></div>
-              <div><div style="font-size:11px;font-weight:700;color:var(--navy);">Maintenance</div><div style="font-size:10px;color:var(--gray);line-height:1.5;">Change requests, retrospection, continuous improvement</div></div>
+              <div style="width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,#047857,#065F46);display:flex;align-items:center;justify-content:center;flex-shrink:0;z-index:1;box-shadow:0 2px 8px rgba(4,120,87,0.3);"><i class="ti ti-settings-automation" style="color:white;font-size:13px;"></i></div>
+              <div style="padding-top:2px;"><div style="font-size:11px;font-weight:700;color:var(--navy);">Maintenance</div><div style="font-size:10px;color:var(--gray);line-height:1.5;">Change requests, retrospection, continuous improvement</div></div>
             </div>
 
           </div>
@@ -1178,10 +1185,10 @@ body:has(a:hover) #cursor-dot { background: #378ADD; transform: translate(-50%,-
     </div>
 
     <div class="flow-card reveal">
-      <div class="flow-card-head"><h4>TL-PAY, 11-step loan origination flow</h4><span class="flow-badge">FinTech · Lending</span></div>
+      <div class="flow-card-head"><h4>TL-PAY, Loan origination flow</h4><span class="flow-badge">FinTech · Lending</span></div>
       <div class="flow-sub">End-to-end digital lending, from applicant details to application status via TL-PAY mobile app</div>
       <div class="flow-svg-wrap">
-        <svg width="100%" viewBox="0 0 620 190" xmlns="http://www.w3.org/2000/svg">
+        <svg width="100%" viewBox="-100 0 820 190" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <marker id="lh" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M1 1L9 5L1 9" fill="none" stroke="#185FA5" stroke-width="1.5" stroke-linecap="round"/></marker>
             <marker id="lh2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M1 1L9 5L1 9" fill="none" stroke="#534AB7" stroke-width="1.5" stroke-linecap="round"/></marker>
@@ -1348,93 +1355,65 @@ body:has(a:hover) #cursor-dot { background: #378ADD; transform: translate(-50%,-
   <div class="skills-grid">
 
     <div class="skill-card sk-ba reveal">
-      <div class="sk-icon"><i class="ti ti-chart-dots-3"></i></div>
+      <div class="sk-icon"><i class="ti ti-clipboard-list"></i></div>
       <h4>BA Core</h4>
-      <div class="skill-pills">
-        <span class="skill-pill">Business Need Definition</span>
-        <span class="skill-pill">Stakeholder Identification</span>
-        <span class="skill-pill">Elicitation &amp; Collaboration</span>
-        <span class="skill-pill">Requirements Analysis</span>
-        <span class="skill-pill">Feasibility Assessment</span>
-        <span class="skill-pill">BRD / FRD / SRS</span>
-        <span class="skill-pill">Use Case Modelling</span>
-        <span class="skill-pill">User Story Writing</span>
-        <span class="skill-pill">Acceptance Criteria</span>
-        <span class="skill-pill">Gherkin / BDD</span>
-        <span class="skill-pill">Gap Analysis</span>
-        <span class="skill-pill">Process Modelling</span>
-        <span class="skill-pill">Data Flow Analysis</span>
-        <span class="skill-pill">Wireframing</span>
-        <span class="skill-pill">Test Scenario Preparation</span>
-        <span class="skill-pill">UAT Support</span>
-        <span class="skill-pill">Change Management</span>
-        <span class="skill-pill">API Integration Requirements</span>
-      </div>
+      <ul class="skill-list">
+        <li>Requirement Gathering</li>
+        <li>Requirement Analysis</li>
+        <li>Feasibility Study</li>
+        <li>BRD / FRD / SRS</li>
+        <li>Use Case Documentation</li>
+        <li>User Story Writing</li>
+        <li>Gap Analysis</li>
+        <li>Stakeholder Management</li>
+        <li>Test Scenario Preparation</li>
+        <li>Test Case Validation</li>
+        <li>UAT Coordination</li>
+        <li>Change Management</li>
+      </ul>
     </div>
 
     <div class="skill-card sk-tools reveal reveal-delay-1">
-      <div class="sk-icon"><i class="ti ti-cpu"></i></div>
+      <div class="sk-icon"><i class="ti ti-apps"></i></div>
       <h4>Tools</h4>
-      <div class="skill-pills">
-        <span class="skill-pill">Jira</span>
-        <span class="skill-pill">Confluence</span>
-        <span class="skill-pill">Balsamiq</span>
-        <span class="skill-pill">MS Visio</span>
-        <span class="skill-pill">Draw.io</span>
-        <span class="skill-pill">OpsvIz</span>
-        <span class="skill-pill">SharePoint</span>
-        <span class="skill-pill">MS Word</span>
-        <span class="skill-pill">Power BI</span>
-        <span class="skill-pill">Tableau</span>
-        <span class="skill-pill">MS Excel</span>
-        <span class="skill-pill">SQL / MySQL</span>
-      </div>
+      <ul class="skill-list">
+        <li>Jira &amp; Confluence</li>
+        <li>Balsamiq (Wireframing)</li>
+        <li>Visio &amp; Draw.io</li>
+        <li>Opsvlz</li>
+        <li>SharePoint &amp; MS Word</li>
+        <li class="skill-list-highlight">Power BI &amp; Tableau</li>
+        <li>MS Excel</li>
+      </ul>
     </div>
 
     <div class="skill-card sk-ai reveal reveal-delay-2">
-      <div class="sk-icon"><i class="ti ti-sparkles"></i></div>
+      <div class="sk-icon"><i class="ti ti-cpu-2"></i></div>
       <h4>AI / Data</h4>
-      <div class="skill-pills">
-        <span class="skill-pill">GPT-4 / LLMs</span>
-        <span class="skill-pill">NLP Concepts</span>
-        <span class="skill-pill">ML Scoring</span>
-        <span class="skill-pill">Prompt Engineering</span>
-        <span class="skill-pill">AI User Stories</span>
-      </div>
+      <ul class="skill-list">
+        <li>GPT-4 / LLMs</li>
+        <li>NLP Concepts</li>
+        <li>ML Scoring Systems</li>
+        <li>Prompt Engineering</li>
+        <li>AI-specific User Stories</li>
+      </ul>
     </div>
 
     <div class="skill-card sk-method reveal">
-      <div class="sk-icon"><i class="ti ti-circuit-switchboard"></i></div>
+      <div class="sk-icon"><i class="ti ti-git-branch"></i></div>
       <h4>Methodology</h4>
-      <div class="skill-pills">
-        <span class="skill-pill">SDLC</span>
-        <span class="skill-pill">Waterfall</span>
-        <span class="skill-pill">Agile / Scrum</span>
-        <span class="skill-pill">Sprint Planning</span>
-        <span class="skill-pill">Backlog Grooming</span>
-        <span class="skill-pill">MoSCoW Prioritisation</span>
-        <span class="skill-pill">Story Walkthroughs</span>
-        <span class="skill-pill">Daily Stand-ups</span>
-        <span class="skill-pill">Sprint Review &amp; Demo</span>
-        <span class="skill-pill">Retrospection</span>
-        <span class="skill-pill">Dependency Mapping</span>
-        <span class="skill-pill">Multi-milestone Delivery</span>
-        <span class="skill-pill">Risk Identification</span>
-      </div>
-    </div>
-
-    <div class="skill-card sk-domain reveal reveal-delay-1">
-      <div class="sk-icon"><i class="ti ti-world"></i></div>
-      <h4>Domains</h4>
-      <div class="skill-pills">
-        <span class="skill-pill">EdTech</span>
-        <span class="skill-pill">FinTech</span>
-        <span class="skill-pill">Lending</span>
-        <span class="skill-pill">Payments</span>
-        <span class="skill-pill">E-Commerce</span>
-        <span class="skill-pill">SaaS ERP</span>
-        <span class="skill-pill">Order Management</span>
-      </div>
+      <ul class="skill-list">
+        <li>SDLC, Waterfall &amp; Agile</li>
+        <li>Scrum Ceremonies</li>
+        <li>Sprint Planning &amp; Grooming</li>
+        <li>Story Walkthroughs</li>
+        <li>Daily Stand-ups</li>
+        <li>Sprint Review &amp; Demo</li>
+        <li>Retrospection</li>
+        <li>MoSCoW Prioritisation</li>
+        <li>Dependency Mapping</li>
+        <li>Risk Identification</li>
+      </ul>
     </div>
 
   </div>
